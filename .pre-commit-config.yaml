@@ -22,11 +22,23 @@ repos:
       - id: check-docstring-first
       - id: check-json
       - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-xml
       - id: check-yaml
       - id: debug-statements
+        # - id: detect-aws-credentials
+      - id: detect-private-key
+        # - id: double-quote-string-fixer
       - id: end-of-file-fixer
+      - id: fix-encoding-pragma
+        args: ['--remove']
       - id: flake8
+      - id: mixed-line-ending
       - id: name-tests-test
+      - id: no-commit-to-branch
+        args: [--branch, staging]
+      - id: pretty-format-json
       - id: requirements-txt-fixer
       - id: trailing-whitespace
 

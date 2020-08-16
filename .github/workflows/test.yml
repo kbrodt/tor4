@@ -59,9 +59,7 @@ jobs:
           python -m pip install --upgrade tox
 
       - name: Test
-        run: |
-          tox -e py
-          tox -e coverage
+        run: tox -e py,coverage
 
       - name: Report Coverage
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.6'

@@ -1,6 +1,6 @@
 # tor4: PyTroch on NumPy
 
-The purpose of this repository is to understand of how [PyTroch](https://pytorch.com)
+The purpose of this repository is to understand of how [PyTroch](https://pytorch.org/)
 library is implemented under the hood and what an
 [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) is.
 

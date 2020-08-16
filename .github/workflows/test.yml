@@ -57,7 +57,7 @@ jobs:
       - name: Test
         shell: bash
         run: |
-          poetry run coverage run --source=tor4 -m pytest {posargs:tests}
+          poetry run coverage run --source=tor4 -m pytest
           poetry run coverage xml
       - name: Report Coverage
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.6'

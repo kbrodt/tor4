@@ -3,7 +3,6 @@
 [![Test Status](https://github.com/kbrodt/tor4/workflows/Test/badge.svg?branch=develop)](https://github.com/kbrodt/tor4/actions?query=workflow%3ATest)
 [![Lint Status](https://github.com/kbrodt/tor4/workflows/Lint/badge.svg?branch=develop)](https://github.com/kbrodt/tor4/actions?query=workflow%3ALint)
 [![Code coverage Status](https://codecov.io/gh/kbrodt/tor4/branch/master/graph/badge.svg)](https://codecov.io/gh/kbrodt/tor4)
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.org/project/isort/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://timothycrosley.github.io/isort/)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)

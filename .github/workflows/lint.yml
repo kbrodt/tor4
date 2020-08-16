@@ -33,7 +33,7 @@ jobs:
 
       - name: Lint
         run: |
-          poetry run mypy --ignore-missing-imports tor4/
-          poetry run black --check ./
-          poetry run isort --profile hug --check --diff ./
-          poetry run flake8 ./
+          poetry run mypy .
+          poetry run black --check .
+          poetry run isort --check
+          poetry run flake8 .

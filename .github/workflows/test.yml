@@ -58,7 +58,7 @@ jobs:
         shell: bash
         run: |
           poetry run coverage run --source=tor4 -m pytest
-          poetry run coverage xml
+          poetry run coverage xml --fail-under=80
       - name: Report Coverage
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.6'
         uses: codecov/codecov-action@v1.0.6

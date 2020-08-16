@@ -24,7 +24,6 @@ numpy = "^1.16.0"
 [tool.poetry.dev-dependencies]
 black = {version = "^19.10b0", allow-prereleases = true}
 coverage = "^5.2.1"
-covdefaults = "^1.1.0"
 flake8 = "^3.8.3"
 isort = "^4.3.21"
 mypy = "^0.782.0"
@@ -70,33 +69,30 @@ max-line-length = 88
 
 
 [tool.coverage.run]
-plugins = ["covdefaults"]
+branch = true
+source = ["."]
+omit = ["*/.tox/*", "*/__main__.py", "*/venv*/*", "*/setup.py"]
 
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 80
+exclude_lines = [
+    # a more strict default pragma
+    "\\# pragma: no cover\\b",
 
-[tool.tox]
-legacy_tox_ini = """
-[tox]
-isolated_build = True
-envlist = py36,pre-commit
+    # allow defensive code
+    "^\\s*raise AssertionError\\b",
+    "^\\s*raise NotImplementedError\\b",
+    "^\\s*return NotImplemented\\b",
+    "^\\s*raise$",
 
-[testenv]
-# Let us make a reports dir using mkdir
-whitelist_externals =
-    /bin/mkdir
-    poetry
-commands =
-    poetry install -v
+    # typing-related code
+    "^if (False|TYPE_CHECKING):",
+    ": \\.\\.\\.$",
+    "^ +\\.\\.\\.$",
+    "-> ['\"]?NoReturn['\"]?:",
 
-    coverage erase
-    mkdir -p reports/coverage
-    poetry run coverage run --source=tor4 -m pytest {posargs:tests}
-    poetry run coverage report --fail-under 80
-    poetry run coverage html -d reports/coverage --fail-under 80
-
-    poetry run mypy --junit-xml reports/mypy/typecheck.xml --cobertura-xml-report reports/mypy --html-report reports/mypy .
-
-[testenv:pre-commit]
-skip_install = true
-deps = pre-commit
-commands = pre-commit run --all-files --show-diff-on-failure
-"""
+    # non-runnable code
+    "if __name__ == ['\"]__main__['\"]:$",
+]

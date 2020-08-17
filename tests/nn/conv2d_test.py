@@ -45,7 +45,7 @@ def test_conv2d_backward3():
 
     try:
         nn.functional.conv2d(a, w, dilation=2)
-        assert False
+        raise AssertionError()
     except RuntimeError:
         assert True
 

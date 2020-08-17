@@ -36,7 +36,7 @@ def test_tesnor_idiv_scalar():
 
     try:
         a /= 2.0
-        assert False
+        raise AssertionError()
     except RuntimeError:
         assert True
 

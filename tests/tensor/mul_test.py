@@ -59,7 +59,7 @@ def test_tensor_imul_backward():
     b = tensor(data=[-1, 3, 1])
     try:
         a *= b
-        assert False
+        raise AssertionError()
     except RuntimeError:
         assert True
 

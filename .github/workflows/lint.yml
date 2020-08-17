@@ -34,6 +34,6 @@ jobs:
       - name: Lint
         run: |
           poetry run black --check .
-          poetry run isort --check
+          poetry run isort -c
           poetry run flake8 .
           poetry run mypy .

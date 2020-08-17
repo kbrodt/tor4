@@ -70,7 +70,7 @@ def test_tensor_iadd_backward():
 
     try:
         a += b
-        assert False
+        raise AssertionError()
     except RuntimeError:
         assert True
 

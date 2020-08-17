@@ -62,6 +62,7 @@ jobs:
       - name: Test
         run: |
           tox -e py
+          COVERAGE_FILE=$(pwd)/.tox/.coverage poetry run coverage combine
           COVERAGE_FILE=$(pwd)/.tox/.coverage poetry run coverage xml
 
       - name: Report Coverage

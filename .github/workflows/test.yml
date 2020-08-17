@@ -61,10 +61,12 @@ jobs:
 
       - name: Test
         run: |
-          tox -e py
-          COVERAGE_FILE=$(pwd)/.tox/.coverage poetry run coverage combine
-          COVERAGE_FILE=$(pwd)/.tox/.coverage poetry run coverage xml
+          tox -e py,coverage
+          # COVERAGE_FILE=$(pwd)/.tox/.coverage poetry run coverage combine
+          # COVERAGE_FILE=$(pwd)/.tox/.coverage poetry run coverage xml
 
       - name: Report Coverage
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.6'
         uses: codecov/codecov-action@v1.0.6
+        with:
+          file: ./.tox/coverage.xml

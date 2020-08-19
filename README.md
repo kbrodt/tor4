@@ -43,7 +43,7 @@ Also there are some basic building blocks for neural networks:
     - BCE - binary cross entropy
     - XENT - categorical cross entropy
 * Optimizer
-    - SGD - stochastic gradient descent
+    - 'SGD' - stochastic gradient descent
 
 # Requirements
 
@@ -53,7 +53,7 @@ Also there are some basic building blocks for neural networks:
 # Installation
 
 ```bash
-poetry install
+poetry install --extras 'dev'
 ```
 
 # Testing
@@ -64,7 +64,7 @@ poetry run pytest
 
 # Usage
 
-You can use it as mini-`torch`: the interface is kept as much as possible the same.
+You can use it as `torch`: the API is almost the same.
 
 Here an example on MNIST dataset. To train using simple linear layers run:
 
@@ -80,12 +80,11 @@ USE_CONV= poetry run python -m examples.mnist
 
 # TODOs
 
-- [ ] Add boolean operations
-- [ ] Add pooling layers
-- [ ] Add `bias` and padding support to `Conv2d`
+- [ ] Boolean operations
+- [ ] `bias` and padding support to `Conv2d`
+- [ ] Pooling layers
+- [ ] `Conv1d'
 
 # Usefull links
 
 - This library is inspired by [Joel's livecoding of an autograd library](https://www.youtube.com/watch?v=RxmBukb-Om4&list=PLeDtc0GP5ICldMkRg-DkhpFX1rRBNHTCs)
-- [Linear backprop](http://cs231n.stanford.edu/handouts/linear-backprop.pdf)
-- [2002, Computational Methods in Decision-Making, Economics and Finance](https://www.springer.com/gp/book/9781402008399), page 297, chapter 15, Automatic Differentiation for Computation Finance

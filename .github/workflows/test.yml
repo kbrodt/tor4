@@ -56,15 +56,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade tox
-          # python -m pip install --upgrade poetry
-          # poetry install
+          python -m pip install --upgrade poetry
+          poetry install
 
       - name: Test
         run: |
-          # poetry run coverage run --source=. -m pytest
-          # poetry run coverage xml
           tox -e py
           tox -e coverage
+          poetry run pytest
 
       - name: Report Coverage
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.6'

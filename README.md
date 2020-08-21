@@ -43,7 +43,7 @@ Also there are some basic building blocks for neural networks:
     - BCE - binary cross entropy
     - XENT - categorical cross entropy
 * Optimizer
-    - 'SGD' - stochastic gradient descent
+    - `SGD` - stochastic gradient descent
 
 # Requirements
 
@@ -80,10 +80,12 @@ USE_CONV= poetry run python -m examples.mnist
 
 # TODOs
 
+- [ ] concatenate, stack and unstack operations
 - [ ] Boolean operations
 - [ ] `bias` and padding support to `Conv2d`
 - [ ] Pooling layers
-- [ ] `Conv1d'
+- [ ] Unpooling layers
+- [ ] `Conv1d`
 
 # Usefull links
 

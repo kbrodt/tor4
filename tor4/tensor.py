@@ -171,6 +171,10 @@ class Tensor:
     def grad(self) -> Optional["Tensor"]:
         return self._grad
 
+    @grad.setter
+    def grad(self, other: Optional["Tensor"]) -> None:
+        self._grad = other
+
     def numel(self) -> int:
         return numel(self)
 

@@ -78,7 +78,9 @@ def epoch_step(model, loader, desc, criterion, opt=None):
             loss = criterion(logits, y)
 
             if is_train:
-                opt.zero_grad()
+                for p in model.parameters():
+                    p.grad = None
+                # opt.zero_grad()
                 loss.backward()
                 opt.step()
 
